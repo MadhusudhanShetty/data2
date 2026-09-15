@@ -15,9 +15,8 @@ pipeline {
                 sh '''
                     echo "testing stage"
                     # Add your test commands here
-                    #bin/bash -c "echo 'Running tests...' 
+                    #bin/bash 
                     sleep 2 
-                    echo 'Tests completed successfully.'"
                 '''
             }
         }
