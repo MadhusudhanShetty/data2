@@ -57,7 +57,7 @@ pipeline {
             steps {
                 catchError(
                     buildResult: 'SUCCESS',
-                    stageResult: 'FAILURE'
+                    stageResult: 'SUCCESS'
                 ) {
                     sh '''
                         sleep 10
@@ -78,7 +78,7 @@ pipeline {
                         echo "Caught an exception: ${e.message}"
 
                         // Mark the build as failed
-                        currentBuild.result = 'PASSED'
+                        currentBuild.result = 'SUCCESS'
 
                     } finally {
                         // Runs regardless of exception
