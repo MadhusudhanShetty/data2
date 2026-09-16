@@ -7,6 +7,12 @@ pipeline {
     choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
     password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    environment {
+        APP     = 'frontend'
+        DB_URL  = ''
+        BRANCH  = 'main'
+        GIT_URL = ''
+    }
     
     stages {
         stage('Build') { 
