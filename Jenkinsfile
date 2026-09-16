@@ -43,8 +43,12 @@ pipeline {
             steps {
                 sh '''
                     echo "Building stage..."
+                    echo "Hello, ${params.PERSON}!"
+                    echo "Biography: ${params.BIOGRAPHY}"
+                    echo "Toggle: ${params.TOGGLE}"
+                    echo "Choice: ${params.CHOICE}"
                     # Add your build commands here
-                    ls -lrth
+
                 '''
             }
         }
