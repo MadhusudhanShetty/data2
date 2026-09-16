@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -68,7 +67,7 @@ pipeline {
                 script {
                     try {
                         // Code that might throw an exception
-                        sh 'some-command-that-might-fail'
+                        sh 'false' // This command will fail and throw an exception
 
                     } catch (Exception e) {
                         // Handling the exception
