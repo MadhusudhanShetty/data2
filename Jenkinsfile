@@ -65,20 +65,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    try {
-                        // Code that might throw an exception
-                        sh 'false' // This command will fail and throw an exception
-
-                    } catch (Exception e) {
-                        // Handling the exception
-                        echo "Caught an exception: ${e.message}"
-
-                        // Mark the build as failed
-                        currentBuild.result = 'PASSED'
-
-                    } finally {
-                        // Runs regardless of exception
-                        echo "Cleaning up resources..."
+                    if (params.TOGGLE) {
+                        echo "Deploying to production..."
+                        // Add your deployment commands here
+                    } else {
+                        echo "Skipping deployment."
                     }
                 }
             }
